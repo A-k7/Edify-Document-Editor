@@ -21,7 +21,9 @@ export default function TextEditor() {
 
   // Connect to backend
   useEffect(() => {
-    const s = io(import.meta.env.VITE_BACKEND_URL);
+    const s = io(import.meta.env.VITE_BACKEND_URL, {
+  transports: ['websocket'], // force websocket for Render
+});
     s.on('connect_error', (err) =>
       console.error('Socket connection failed:', err.message)
     );

@@ -12,9 +12,9 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: 'process.env.VITE_FRONTEND_URL', // Or replace with your frontend URL once deployed
-    methods: ['GET', 'POST'],
-  },
+  origin: process.env.VITE_FRONTEND_URL,
+  methods: ['GET', 'POST'],
+},
 });
 
 connectDB();
