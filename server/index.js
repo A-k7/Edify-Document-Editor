@@ -12,7 +12,7 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: 'http://localhost:5173', // Or replace with your frontend URL once deployed
+    origin: 'import.meta.env.VITE_FRONTEND_URL', // Or replace with your frontend URL once deployed
     methods: ['GET', 'POST'],
   },
 });
